@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_action :set_topic, only: [:edit, :update, :destroy]
+
   def index
     @topics = Topic.all
   end
@@ -8,19 +10,34 @@ class TopicsController < ApplicationController
   end
 
   def create
-    Topic.create(topic_params)
-    redirect_to topics_path
+    @topic = Topic.new(topic_params)
+     if @topic.save
+       redirect_to topics_path, notice: "投稿しました！"
+     else
+      render 'new'
+
+    # Topic.create(topic_params)
+    # redirect_to topics_path
+    # redirect_to topics_path, notice: "投稿しました！"
+
   	
   end
 
   def edit
+     @topic = Topic.find(params[:id])
 
   end
 
   def update
+    @topic = Topic.find(params[:id])
+    @topic.update(topic_params)
+    redirect_to topics_path, notice: "投稿しました！"
   end
 
   def destroy
+    @topic = Topic.find(params[:id])
+    @topic.destroy
+    redirect_to topics_path, notice: "投稿しました！"
   end
 
     private
@@ -28,4 +45,11 @@ class TopicsController < ApplicationController
       params.require(:topic).permit(:title, :content)
     end
 
+      # idをキーとして値を取得するメソッド
+    def set_topic
+      @topic = Topic.find(params[:id])
+    end
+
+
+ end
 end

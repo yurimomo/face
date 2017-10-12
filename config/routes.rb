@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
 
 
-  get 'topic' => 'topics#index'
+  # get 'contacts/new'
+
+  # get 'topic' => 'topics#index'
 
   resources :topics, only: [:index, :new, :create, :edit, :update, :destroy]
+
+  resources :contacts, only: [:new, :create] do
+      collection do
+        post :confirm
+    end
+  end
+
+  root 'top#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,8 +1,19 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+
+ <p id="notice"><%= notice %></p>
+
 <h1>topic一覧</h1>
 
 <% @topics.each do |topic| %>
+<div class="row">
   <p>タイトル:<%= topic.title %></p>
-  <p>本文:<%= topic.content %></p>
+  <p>本文:<%= topic.content %></p>  
+   <%= link_to "topicを編集する", edit_topic_path(topic.id) %><br>
+   <%= link_to "topicを削除する", topic_path(	topic.id), method: :delete %><br>
 <% end %>
+</div>
+</div>
+</div>
 
 <%= link_to "topicを作成する", new_topic_path %>

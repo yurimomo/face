@@ -1,0 +1,130 @@
+// Place all the styles related to the Top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*.box {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	background-color: pink;
+	margin: 0 auto;
+}
+.container:after {
+	content: "";
+	clear: both;
+	display: block;
+}*/
+
+/*.box {
+	width: 1350px;
+	text-align: center;
+	margin: 0 auto;
+
+}*/
+.image {
+ text-align: center;
+ margin: 0 0 0 100px;
+ /*width: 500px;
+ height: auto;*/
+ /*margin-left: 300px;*/
+}
+.image img{
+	/*height: 600px;*/
+	/*margin-left: 100px;*/
+}
+.login {
+	border: 5px solid pink;
+	width: 400px;
+	height: 500px;
+	margin: 0 auto;
+	margin-left: 50px;
+	margin-right: 50px;
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 80px;
+	float:right;
+}
+.login h3 {
+	font-family: 'Pacifico', cursive;
+	font-size: 36px;
+	width: 175px;
+	height: 51px;
+	margin: 0 auto;
+	margin-top: 20px;
+
+}
+.login a {
+	text-decoration: none;
+}
+.login p {
+	margin-top: 15px;
+	color: blue;
+}
+.fa-sign-in {
+	color: pink;
+}
+h4 {
+	color: pink;
+}
+footer {
+	height: 50px;
+	width: 100%;
+	/*margin: auto;*/
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	background-color: skyblue;
+}
+footer a {
+	color: white;
+
+}
+
+footer  {
+	list-style: none;
+	margin: 0;
+}
+.contact {
+	padding-top: 10px;
+}
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	text-align: center;
+}
+.container:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.image {
+	float:left;
+	width: auto;
+	margin-top: 100px;
+}
+.login {
+	float:right;
+	width: 500px;
+}
+header  {
+	height: 60px;
+	background-color: blue;
+	color: #fff;
+}
+.face {
+	font-size: 18px;
+	text-align: left;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+.fa-thumbs-o-up {
+	font-size: 300px;
+	color: blue;
+}
