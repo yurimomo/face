@@ -18,9 +18,11 @@
   <%= f.hidden_field :name %>
   <%= f.hidden_field :email %>
   <%= f.hidden_field :content %>
-  <%= f.submit "もどる", name: 'back', class: 'btn btn-default btn-block' %>
+  <%= f.submit "もどる", name: 'back', class: 'btn btn-default btn-block' %><br>
+  <%= link_to "topic一覧へ戻る", topics_path %>
+
   <% end %>
- 
+
   </div>
  </div>
  

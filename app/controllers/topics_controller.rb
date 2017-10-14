@@ -6,8 +6,13 @@ class TopicsController < ApplicationController
   end
 
   def new
-  	@topic = Topic.new
+  	if params[:back]
+     @topic = Topic.new(topic_params)
+     else
+      @topic = Topic.new
+    end
   end
+
 
   def create
     @topic = Topic.new(topic_params)
@@ -19,8 +24,7 @@ class TopicsController < ApplicationController
     # Topic.create(topic_params)
     # redirect_to topics_path
     # redirect_to topics_path, notice: "投稿しました！"
-
-  	
+    end
   end
 
   def edit
@@ -40,6 +44,12 @@ class TopicsController < ApplicationController
     redirect_to topics_path, notice: "投稿しました！"
   end
 
+  def confirm
+    @topic = Topic.new(topic_params)
+    render :new if @topic.invalid?
+
+  end
+
     private
     def topic_params
       params.require(:topic).permit(:title, :content)
@@ -52,4 +62,3 @@ class TopicsController < ApplicationController
 
 
  end
-end
