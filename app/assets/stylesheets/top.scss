@@ -114,7 +114,7 @@ body {
 	width: 500px;
 }
 header  {
-	height: 60px;
+	height: 70px;
 	background-color: blue;
 	color: #fff;
 }
@@ -123,8 +123,14 @@ header  {
 	text-align: left;
 	padding-left: 20px;
 	padding-top: 20px;
+	width: 100px;
+	height: 30px;
 }
 .fa-thumbs-o-up {
 	font-size: 300px;
 	color: blue;
+}
+.flash {
+  color: black;
+  padding-top: 10px;
 }

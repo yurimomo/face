@@ -9,21 +9,29 @@
 
 </head>
 <body>
- 
-<!--  <header>
-    <ul>
-      <li><a href="#">face</a></li>
-      <li><a href="#">トップページ</a></li>
-      <li><a href="#">お問い合わせ</a></li>
-      <li><a href="#">topic</a></li>
-    </ul>
-  </header>
- -->
-<%= yield %>
+  <header>
+  <div class="face">facebook</div>
+ <% if user_signed_in? %>
+ <ul>
+ <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+<% else %>
+  <li><%= link_to 'ログイン', new_user_session_path  %></li>
+  <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+  </ul>
 
-</body>
+<% end %>
+<p class="flash"><%= notice %><%= alert %></p>
+
+
+</header>
+   
+   <%= yield %>
+
+
 
  <footer>
    <div class="contact"><%= link_to "お問い合わせ" , new_contact_path %></div>
  </footer>
+ </body>
 </html>
