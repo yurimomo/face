@@ -1,20 +1,27 @@
 <div class="container">
-  
-
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
 
-<h1>topic一覧</h1>
-<div class="row">
-<% @topics.each do |topic| %>
+   <h1>topic一覧</h1>
+   <%= link_to "topic作成" , new_topic_path %>
+  
+  <% @topics.each do |topic| %>
 
-  <p>タイトル:<%= topic.title %></p>
-  <p>本文:<%= topic.content %></p>  
-   <%= link_to "topicを編集する", edit_topic_path(topic.id) %>
-   <%= link_to "topicを削除する", topic_path(	topic.id), method: :delete %><br>
-<% end %>
-</div>
-</div>
+   <div class="row">
+    <p>タイトル:<%= topic.title %></p>
+    <p>本文:<%= topic.content %></p>  
+
+    <div class="profile">
+	   <div class="user_name">
+	    <%= topic.user.name %> が投稿しました
+	    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+	  </div>
+	 </div>
+
+    <%= link_to "topicを編集する", edit_topic_path(topic.id) %>
+    <%= link_to "topicを削除する", topic_path(topic.id), method: :delete %><br>
+   </div>
+   <% end %>
+ </div>
 </div>
 
-
-<%= link_to "topicを作成する", new_topic_path %>
