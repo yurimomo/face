@@ -10,6 +10,7 @@ class NoticeMailer < ApplicationMailer
 
       mail to: "yuri715lily_momo@yahoo.co.jp",
       subject: 'topicが投稿されました'
+<<<<<<< HEAD
    end
 
    def sendmail_contact(contact)
@@ -17,6 +18,8 @@ class NoticeMailer < ApplicationMailer
 
     mail to: @contact.email,
     subject: 'お問い合わせありがとうございました'
+=======
+>>>>>>> 2dc89222f7b9e71e5c9ca44995dec615fe39b72b
 
   end
 end
