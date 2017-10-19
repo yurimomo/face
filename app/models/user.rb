@@ -7,7 +7,11 @@ class User < ActiveRecord::Base
 
 
          has_many :topics,dependent: :destroy
-
+   
+   # ランダムなuidを作成するcreate_unique_stringメソッドを作成
+    def self.create_unique_string
+    SecureRandom.uuid
+    end
 
 
     def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
