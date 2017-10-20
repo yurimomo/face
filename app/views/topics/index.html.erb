@@ -1,27 +1,41 @@
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-
-   <h1>topic一覧</h1>
-   <%= link_to "topic作成" , new_topic_path %>
-  
+ <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+ 
+  <h1>topic一覧</h1>
+   <%= link_to "topicを作成する" , new_topic_path, class: 'btn btn-default' %>
   <% @topics.each do |topic| %>
+  <div class="row">
+  <!-- ブログのタイトルにlink_toでリンクを設定します。 -->
+        <%= link_to topic_path(topic) do %>
+        <h4><strong><%= topic.title %></strong></h4>
+        <% end %>
 
-   <div class="row">
-    <p>タイトル:<%= topic.title %></p>
-    <p>本文:<%= topic.content %></p>  
 
-    <div class="profile">
-	   <div class="user_name">
-	    <%= topic.user.name %> が投稿しました
-	    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-      <i class="fa fa-trash" aria-hidden="true"></i>
-	  </div>
-	 </div>
-
-    <%= link_to "topicを編集する", edit_topic_path(topic.id) %>
-    <%= link_to "topicを削除する", topic_path(topic.id), method: :delete %><br>
+   <h3><%= topic.user.name %></h3>
+   <h4><strong><%= topic.title %></strong></h4>
+   <p><%= topic.content %></p>
+   <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success' %>
+   <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %><br>
+   
+   
    </div>
-   <% end %>
- </div>
-</div>
+   
+   <div class="profile">
+    <div class="profile_img">
+      <%= profile_img(topic.user) %>
+    </div>
+    <div class="user_name">
+      <%= topic.user.name %> が投稿しました。
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <i class="fa fa-trash" aria-hidden="true"></i>
 
+
+    </div>
+   </div>
+  
+   <% end %>
+     
+ 
+ </div>
+  
+</div>

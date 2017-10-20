@@ -25,6 +25,9 @@ html {
 body {
   margin: 0;
 }
+img{
+  max-width: 100%;
+}
 
 /**
  * Add the correct display in IE 9-.
