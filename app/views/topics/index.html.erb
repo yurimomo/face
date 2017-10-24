@@ -1,41 +1,35 @@
 <div class="container">
- <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+ <div class="wrapper col-md-8 col-md-offset-2">
+
+<%= link_to "投稿する", new_topic_path, class: 'btn btn-default post' %>
+<h2>Topic一覧</h2>
+
+<% @topics.each do |topic| %>
+ <div class="row">
  
-  <h1>topic一覧</h1>
-   <%= link_to "topicを作成する" , new_topic_path, class: 'btn btn-default' %>
-  <% @topics.each do |topic| %>
-  <div class="row">
-  <!-- ブログのタイトルにlink_toでリンクを設定します。 -->
-        <%= link_to topic_path(topic) do %>
-        <h4><strong><%= topic.title %></strong></h4>
-        <% end %>
-
-
-   <h3><%= topic.user.name %></h3>
-   <h4><strong><%= topic.title %></strong></h4>
-   <p><%= topic.content %></p>
-   <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success' %>
-   <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %><br>
-   
-   
+ <form>
+  <%= image_tag (topic.picture_url) %><br>
+  <!-- <div class="comment"> -->
+   <div class="text">
+   <%= topic.content %><br>
    </div>
    
    <div class="profile">
-    <div class="profile_img">
-      <%= profile_img(topic.user) %>
+   <div class="profile_img">
+    <%= profile_img(topic.user) %>
     </div>
     <div class="user_name">
-      <%= topic.user.name %> が投稿しました。
-      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    <%= topic.user.name %> が投稿しました
+     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
       <i class="fa fa-trash" aria-hidden="true"></i>
-
-
-    </div>
+   </div>
    </div>
   
-   <% end %>
-     
- 
- </div>
+    <%= link_to "編集" , edit_topic_path(topic.id), class: 'btn btn-default'%>
   
+  <%= link_to "削除" , topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
+  </div>
+ <% end %>
+</form>
+</div>
 </div>
