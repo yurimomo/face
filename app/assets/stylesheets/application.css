@@ -19,6 +19,21 @@
 .log_in {
 	float: right;
 	padding-right: 10px;
+	margin-top: 5px;
+}
+.log_in ul li {
+	float:left;
+	width: auto;
+}
+
+.log_in ul li a {
+	margin-left: 10px;
+	padding: 5px;
+	text-decoration: none;
+	color: #fff;
+}
+.log_in ul li a:hover {
+	color: skyblue;
 }
 
 

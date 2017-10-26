@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # get 'contacts/new'
 
   # get 'topic' => 'topics#index'
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show]
   resources :relationships, only: [:create, :destroy]
 
   resources :topics, only: [:index, :new, :create, :edit, :update, :destroy] do
