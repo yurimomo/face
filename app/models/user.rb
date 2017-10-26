@@ -6,7 +6,11 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader #deviseの設定配下に追記
 
-   has_many :topics,dependent: :destroy
+   has_many :topics, dependent: :destroy
+
+    # CommentモデルのAssociationを設定
+   has_many :comments, dependent: :destroy
+
    
    # ランダムなuidを作成するcreate_unique_stringメソッドを作成
 

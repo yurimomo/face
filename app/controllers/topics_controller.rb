@@ -1,10 +1,15 @@
 class TopicsController < ApplicationController
     before_action :authenticate_user!
 
-  before_action :set_topic, only: [:edit, :update, :destroy]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   def index
     @topics = Topic.all
+    respond_to do |format|
+    format.html
+    format.js
+  end
+
   end
 
   def new
@@ -55,6 +60,13 @@ class TopicsController < ApplicationController
     render :new if @topic.invalid?
 
   end
+
+  # showアククションを定義します。入力フォームと一覧を表示するためインスタンスを2つ生成します。
+  def show
+    @comment = @topic.comments.build
+    @comments = @topic.comments
+  end
+
 
     private
     def topic_params

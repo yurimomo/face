@@ -19,9 +19,11 @@ input[type="submit"].btn-block{
 .container{
   padding-bottom: 85px;
 }
-.left {
+
+/*commentがpinkになってしまうため*/
+/*.left {
   background-color: pink;
-}
+}*/
 
 /*achieveのコピペ*/
 .profile:after {
@@ -87,6 +89,8 @@ li  {
 .profile_img img {
   border-radius: 50%;
 }
-
+.topic-text {
+  margin-top: 10px;
+}
 
 

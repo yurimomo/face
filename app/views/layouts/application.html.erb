@@ -12,6 +12,7 @@
   <header>
   <div class="face">facebook</div>
  <% if user_signed_in? %>
+ <div class="log_in">
  <ul>
  <li><%= link_to 'マイページ', edit_user_registration_path %></li>
   <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
@@ -19,6 +20,7 @@
   <li><%= link_to 'ログイン', new_user_session_path  %></li>
   <li><%= link_to 'サインアップ', new_user_registration_path %></li>
   </ul>
+  </div>
 
 <% end %>
 <p class="flash"><%= notice %><%= alert %></p>
