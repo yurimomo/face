@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'messages/index'
+
+  get 'messages/create'
+
   get 'relationships/create'
 
   get 'relationships/destroy'
@@ -32,6 +36,11 @@ Rails.application.routes.draw do
    resources :comments
     post :confirm, on: :collection
    end
+
+ resources :conversations do
+  resources :messages
+   end
+
 
   
 
