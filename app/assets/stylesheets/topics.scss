@@ -32,7 +32,7 @@ input[type="submit"].btn-block{
   display: block;
 }
 .profile {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 .profile_img {
   float: left;
@@ -86,10 +86,31 @@ li  {
 
 }
 
-.profile_img img {
-  border-radius: 50%;
-}
+
 .topic-text {
+  margin-top: 10px;
+}
+.text {
+  font-size: 30px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-top: 5px;
+  width: 500px;
+  height: 100px;
+  padding-left: 10px;
+}
+.submit {
+  margin-top: 10px;
+}
+.back {
+  margin-top: 10px;
+}
+/*img {
+  width: 60px;
+  height: 60px;
+}*/
+
+.actions {
   margin-top: 10px;
 }
 

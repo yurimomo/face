@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
 
-  get 'messages/index'
+  # get 'messages/index'
 
-  get 'messages/create'
+  # get 'messages/create'
 
-  get 'relationships/create'
+  # get 'relationships/create'
 
-  get 'relationships/destroy'
+  # get 'relationships/destroy'
 
   devise_for :users, controllers: {
     registrations: "users/registrations",

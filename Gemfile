@@ -30,6 +30,7 @@ gem 'omniauth-facebook'
 #image uploader
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'faker'
 
 
 # Use ActiveModel has_secure_password

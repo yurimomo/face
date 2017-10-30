@@ -10,13 +10,15 @@
         <%= link_to topic_path(topic) do %>
         <h4><strong><%= topic.title %></strong></h4>
         <% end %>
-        <p><%= topic.content %></p>
-<form>
+
+<!-- <form> -->
   <%= image_tag (topic.picture_url) %><br>
   <!-- <div class="comment"> -->
    <div class="text">
    <%= topic.content %><br>
    </div>
+     <%= link_to "コメントを書く", topic_path(topic) %>
+
    
    <div class="profile">
    <div class="profile_img">
@@ -29,12 +31,16 @@
    </div>
    </div>
   
+   
+   <!-- <div class="edit_d"> -->
     <%= link_to "編集" , edit_topic_path(topic.id), class: 'btn btn-default'%>
   
   <%= link_to "削除" , topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
+  <!-- </div> -->
+
   </div>
  <% end %>
- </form>
+ <!-- </form> -->
  </div>
 </div>
 </div>
