@@ -18,13 +18,19 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @comment = current_user.comments.build(comment_params)
-    @comment.edit
+    @comment = Comment.find(params[:id])
+    @topic = @comment.topic
+    
   end
 
   def update
     @comment = Comment.find(params[:id])
-    @comment.update(comment_params)
+    if @comment.update(comment_params) #正常に更新できた場合
+      @topic = @comment.topic
+      redirect_to topic_path(@topic.id), notice: "更新しました" #viewsへnotice変数を渡し、blogs/show.html.erbへ
+    else
+      render 'edit' #views/blogs/edit.html.erbを呼び出す
+    end
   end
 
   def destroy
@@ -41,8 +47,8 @@ class CommentsController < ApplicationController
       else
         format.html { render :new }
       end
+    end
   end
-end
 
 
 
