@@ -32,6 +32,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'faker'
 gem 'fog'
+gem 'dotenv-rails'
+gem 'unicorn'
+gem 'therubyracer', platforms: :ruby
 
 
 # Use ActiveModel has_secure_password
@@ -57,6 +60,12 @@ group :development, :test do
   gem 'spring'
 
   gem 'letter_opener_web'
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
+
 
 end
 
