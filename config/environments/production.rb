@@ -4,9 +4,7 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-    config.action_mailer.default_url_options = { host: ' https://infinite-sea-91818.herokuapp.com/
-
-' }
+    config.action_mailer.default_url_options = { host: 'http://52.198.99.39/' }
     ActionMailer::Base.delivery_method = :smtp
     ActionMailer::Base.smtp_settings =
     {
