@@ -11,23 +11,26 @@
   email = Faker::Internet.email
   password = Faker::Internet.password
   uid   = SecureRandom.uuid
-  avatar = Faker::Avatar.image
+  avatar = Faker::Avatar.image("my-own-slug", "50x50", "jpg") 
+  content = Faker::Food.ingredient
   
   user = User.create!(
   	  name: name,   
   	  email: email,
 	    password: password,
 	    password_confirmation: password,
-	    uid: uid
+	    uid: uid,
+      avatar: avatar
 	  )
 
   topic = Topic.new(
-    content: 'topic',
-    user_id: user.id
+    content: content,
+    user_id: user.id,
+    picture: avatar
     )
 
   topic.comments.build(
-    content: 'comment',
+    content: 'looks yummy',
     user_id: user.id)
   topic.save
  end

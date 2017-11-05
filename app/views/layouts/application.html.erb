@@ -20,25 +20,19 @@
   <li><%= link_to "メッセージ", conversations_path %></li>
 
 
-<% else %>
+ <% else %>
   <li><%= link_to 'ログイン', new_user_session_path  %></li>
   <li><%= link_to 'サインアップ', new_user_registration_path %></li>
   </ul>
   </div>
 
-<% end %>
+ <% end %>
 
-</header>
-<p class="flash"><%= notice %><%= alert %></p>
-
-
-   
+ </header>
+ <p class="flash"><%= notice %><%= alert %></p> 
    <%= yield %>
-
-
-
- <footer>
-   <div class="contact"><%= link_to "お問い合わせ" , new_contact_path %></div>
- </footer>
+  <footer>
+    <div class="contact"><%= link_to "お問い合わせ" , new_contact_path %></div>
+  </footer>
  </body>
 </html>

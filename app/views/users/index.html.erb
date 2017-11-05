@@ -7,30 +7,23 @@
 
       <% @users.each do |user| %>
       <div class="container-child col-md-3 col-sm-4 col-xs-6 ">
-      <div class="profile_img">
+      <!-- <div class="profile_img"> -->
         <%= profile_img(user) %><br>
-
-        
         <%= render partial: 'follow_form', locals: { user: user } if signed_in? %>
-       
-        
         <%= user.email %><br>
         <%= link_to "詳細ページ", user_path(user) %><br>
 
-
-       
       <% if user.id != current_user.id %>
        
         <div class="item">
           <%= link_to user.name, user %><br>
           <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+         </div>
         </div>
-        </div>
-        
        <% end %>
       </div>
     <% end %>
-   </div>
+   <!-- </div> -->
 
   
 
